@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ValidateWalletReturnsCorrectListOfTransactions {
 
     @Test
-    public void testTxHashes() {
+    public void walletReturnsCcorrectTransaction() {
         String baseUrl = Config.getBaseUrl();
         String token = Config.getToken();
         String address = Config.getAddress();
