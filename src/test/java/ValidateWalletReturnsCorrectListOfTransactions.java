@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ValidateWalletReturnsCorrectListOfTransactions {
@@ -36,5 +37,7 @@ public class ValidateWalletReturnsCorrectListOfTransactions {
 
         List<String> txHashes = response.jsonPath().getList("unconfirmed_txrefs.tx_hash");
         assertTrue(txHashes.contains(txRef));
+        String txAdress = response.jsonPath().get("address");
+        assertEquals(address,txAdress);
     }
 }
